@@ -1,0 +1,139 @@
+﻿<Window x:Class="FGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FGame"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" WindowState="Maximized" KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid x:Name="Homep">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resoures/mainback.jpg"/>
+            </Grid.Background>
+            <Label x:Name="title_big" Content="        米 奇 司 马 妙 妙 屋&#xA;Mickey Don't Have Mother!" HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" Height="217" Width="1190" FontSize="82" FontFamily="STHupo" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="Red"/>
+            <Button x:Name="btn_Play" 
+                Content="P L A Y" 
+                HorizontalAlignment="Center" 
+                Height="106" 
+                Margin="0,520,0,0" 
+                VerticalAlignment="Top" 
+                Width="536"
+                Style="{StaticResource BUTTON_AGREE}" FontSize="70" Background="#FF9E9E9E" Foreground="{x:Null}" Click="btn_Play_Click" 
+                />
+            <Button x:Name="btn_Exit" 
+                Content="E X I T" 
+                HorizontalAlignment="Center" 
+                Height="106" 
+                Margin="0,856,0,0" 
+                VerticalAlignment="Top" 
+                Width="536"
+                Style="{StaticResource BUTTON_AGREE}" FontSize="70" Background="#FF9E9E9E" Foreground="{x:Null}" Click="btn_Exit_Click" 
+                />
+            <Button x:Name="btn_about" 
+                Content="A B O U T" 
+                HorizontalAlignment="Center" 
+                Height="106" 
+                Margin="0,682,0,0" 
+                VerticalAlignment="Top" 
+                Width="536"
+                Style="{StaticResource BUTTON_AGREE}" FontSize="70" Background="#FF9E9E9E" Foreground="{x:Null}" Click="btn_about_Click" 
+                />
+            <Label x:Name="title_small" Content="Hello World" HorizontalAlignment="Left" Height="92" Margin="1184,192,0,0" VerticalAlignment="Top" Width="512" FontSize="70" FontWeight="Bold" BorderBrush="Red" Background="{x:Null}" Foreground="#FF0027FF" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-17.723"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Grid x:Name="ad_grid" HorizontalAlignment="Center" Height="828" VerticalAlignment="Top" Width="1032" Margin="0,-844,0,0">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Resoures/map/title.png"/>
+                </Grid.Background>
+                <Label Content=" 公 告 " HorizontalAlignment="Center" Height="110" Margin="0,110,0,0" VerticalAlignment="Top" Width="830" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="70" FontWeight="Bold" FontFamily="Arial Black"/>
+                <Label x:Name="ad_text" Content="首先，不联网是臭傻逼&#xD;&#xA;其次，不联网是臭傻逼&#xD;&#xA;最后，不联网是臭傻逼" HorizontalAlignment="Left" Height="466" Margin="128,244,0,0" VerticalAlignment="Top" Width="743" FontSize="40"/>
+                <Button 
+                    Content="爹知道了" 
+                    HorizontalAlignment="Center" 
+                    Height="62" 
+                    Margin="0,624,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="216"
+                    Style="{StaticResource BUTTON_AGREE}" FontSize="40" Background="#FF9E9E9E" Foreground="{x:Null}" Click="Button_Click_5" 
+                />
+            </Grid>
+        </Grid>
+        <Grid x:Name="Gamep" Margin="-26,1155,-2056,-1154" Height="1079">
+            <Grid x:Name="Map" Width="4000">
+                <Grid.Background>
+                    <ImageBrush Stretch="None" TileMode="None" ImageSource="/Resoures/map/lv0.png"/>
+                </Grid.Background>
+                <Image x:Name="Huowu" gif:ImageBehavior.AnimatedSource="/Resoures/player/huowu.gif" Margin="2502,428,1344,437"/>
+                <Image x:Name="Zombie" gif:ImageBehavior.AnimatedSource="/Resoures/player/zombie.gif" Margin="1761,414,2055,423"/>
+                <Grid x:Name="Player" HorizontalAlignment="Left" Height="160" Margin="92,230,0,0" VerticalAlignment="Top" Width="159">
+                    <Grid.Background>
+                        <ImageBrush Stretch="Uniform" TileMode="FlipXY" ImageSource="/Resoures/player/player.png"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid x:Name="Cent_0" HorizontalAlignment="Left" Height="64" Margin="1026,551,0,0" VerticalAlignment="Top" Width="64">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Resoures/icon/gold.png"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid x:Name="Cent_1" HorizontalAlignment="Left" Height="64" Margin="2547,540,0,0" VerticalAlignment="Top" Width="64">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Resoures/icon/gold.png"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid x:Name="Cent_2" HorizontalAlignment="Left" Height="64" Margin="1467,476,0,0" VerticalAlignment="Top" Width="64">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Resoures/icon/gold.png"/>
+                    </Grid.Background>
+                </Grid>
+            </Grid>
+
+            <Label x:Name="Cent_T" Content="Cent：0" HorizontalAlignment="Left" Height="66" Margin="40,29,0,0" VerticalAlignment="Top" Width="252" FontSize="50" Foreground="#FF656565"/>
+            <Button 
+                Content="Right" 
+                HorizontalAlignment="Left" 
+                Height="74" 
+                Margin="750,246,0,0" 
+                VerticalAlignment="Top" 
+                Width="166"
+                Style="{StaticResource BUTTON_AGREE}" FontSize="45" Background="#FF9E9E9E" Foreground="{x:Null}" Click="Button_Click_4" 
+                />
+            <Button 
+                Content="Down" 
+                HorizontalAlignment="Left" 
+                Height="74" 
+                Margin="565,246,0,0" 
+                VerticalAlignment="Top" 
+                Width="167"
+                Style="{StaticResource BUTTON_AGREE}" FontSize="45" Background="#FF9E9E9E" Foreground="{x:Null}" Click="Button_Click_2" 
+                />
+            <Button 
+                Content="UP" 
+                HorizontalAlignment="Left" 
+                Height="74" 
+                Margin="565,149,0,0" 
+                VerticalAlignment="Top" 
+                Width="167"
+                Style="{StaticResource BUTTON_AGREE}" FontSize="45" Background="#FF9E9E9E" Foreground="{x:Null}" Click="Button_Click_1" 
+                />
+            <Button 
+                Content="Left" 
+                HorizontalAlignment="Left" 
+                Height="74" 
+                Margin="376,246,0,0" 
+                VerticalAlignment="Top" 
+                Width="167"
+                Style="{StaticResource BUTTON_AGREE}" FontSize="45" Background="#FF9E9E9E" Foreground="{x:Null}" Click="Button_Click_3" 
+                />
+
+        </Grid>
+    </Grid>
+</Window>
